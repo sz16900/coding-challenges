@@ -3,18 +3,22 @@ function timeConversion(s) {
     let slicedTime = s.slice(2, s.length - 2)
     let addTime = Number(time);
     if (s.includes("PM")) {
-        addTime += 12;
-        console.log(addTime + slicedTime);
+        let x = addTime + 12;
+        if (x === 24) {
+            return time + slicedTime;
+        } else {
+            return x + slicedTime;
+        }
+    } else if (time === "12" && s.includes("AM")) {
+        return "00" + slicedTime;
     } else {
-        addTime = Math.abs(addTime - 12);
-        console.log(addTime + slicedTime);
+        return time + slicedTime;
     }
-
 }
 
 
-timeConversion("07:05:45PM");
-timeConversion("07:05:45AM");
-timeConversion("11:05:45PM");
-timeConversion("11:59:45AM");
-timeConversion("11:05:45PM");
+console.log(timeConversion("12:00:00AM"));
+console.log(timeConversion("12:00:00PM"));
+console.log(timeConversion("11:59:59AM"));
+console.log(timeConversion("11:59:59PM"));
+console.log(timeConversion("01:59:59AM"));
