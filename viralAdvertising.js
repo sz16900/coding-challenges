@@ -11,4 +11,4 @@ function viralAdvertising(n) {
 
 }
 
-viralAdvertising(5)
+viralAdvertising(7)
