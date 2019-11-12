@@ -17,3 +17,9 @@ function utopianTree(n) {
 }
 
 utopianTree(3);
+utopianTree(33);
+utopianTree(32231);
+utopianTree(331232);
+utopianTree(33124);
+utopianTree(36666);
+utopianTree(39898);
