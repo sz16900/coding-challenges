@@ -1,8 +1,16 @@
 function kangaroo(x1, v1, x2, v2) {
-    let k1 = 0;
-    let k2 = 0;
+    let counter = 0;
 
-    if () { }
+    while (counter < 1000) {
+        counter += 1;
+        x1 += v1;
+        x2 += v2;
+        if (x1 === x2) {
+            return "YES"
+        }
+
+    }
+    return "NO"
 
 }
 
