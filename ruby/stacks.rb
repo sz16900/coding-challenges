@@ -9,6 +9,7 @@ end
   
 class LinkedList
 #setup head and tail
+attr_accessor :tail, :num_of_items, :head
 def initialize
     @head = nil
     @tail = nil
@@ -21,16 +22,16 @@ def add(number)
     @num_of_items += 1
     if @head.nil? && @tail.nil?
         head_tails(node)
-        return 
-    end
-    if @head.next_node.nil?
+         
+    elsif @head.next_node.nil?
         @head.next_node = node
         @tail = node
-        return
+        
+    else
+        copy = @tail 
+        copy.next_node = node
+        @tail = node
     end
-    copy = @tail 
-    copy.next_node = node
-    @tail = node
 end
 
 def get(index)
@@ -65,7 +66,31 @@ end
 def remove(index)
     prev_node = get_node(index -1)
     prev_node.next_node = get_node(index + 1)
+end
+
+def pop
+
+    popped = @tail
+    # puts "Here #{@tail.value}"
+
+    if @num_of_items == 1
+        @head = nil
+        @tail = nil
+        @num_of_items = 0
+        return popped
+    else
+        last_node = get_node(@num_of_items - 1)
+        @num_of_items -= 1
+        if @num_of_items == 1
+            @tail = @head
+            return last_node
+        else
+            @tail = last_node
+        end
+        return popped
     end
+    
+end
 
 private
 
@@ -82,25 +107,32 @@ def get_node(index)
         node = node.next_node
         counter += 1
     end
-    end
+end
 
 
 end
 
-list = LinkedList.new
+class Stack
 
-list.add(3)
-list.add(5)
+    attr_accessor :list
 
-list.add_at(1, 11)
-list.add_at(0, 13)
+    def initialize
+        @list = LinkedList.new
+    end
 
-#   puts list.get(2)
-# => 11
+    def push(number)
+      @list.add(number)
+    end
+    
+    def pop
+      return @list.pop.value
+    end
+end
 
-#   puts list.get(3)
-# => 5
-
-list.remove(2)
-
-(0..2).each {|x| puts list.get(x)}
+stack = Stack.new
+stack.push(3) 
+stack.push(5) 
+stack.push(10) 
+puts stack.pop 
+puts stack.pop 
+puts stack.pop
