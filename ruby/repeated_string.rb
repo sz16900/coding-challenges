@@ -1,5 +1,5 @@
 def repeatedString(s, n)
-    if !s.include? "a"
+    if !s.include? "a" 
         return 0
     elsif s.length == 1 && s == 'a'
         return n
