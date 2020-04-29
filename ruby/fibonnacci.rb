@@ -7,8 +7,3 @@ end
 
 puts fibonnacci(5)
 
-# def f (n)
-#     n < 2 ? n : f(n-1) + f(n-2)
-# end 
-
-# puts f(6)
