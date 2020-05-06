@@ -1,7 +1,7 @@
 def repeatedString(s, n)
     if !s.include? "a" 
         return 0
-    elsif s.length == 1 && s == 'a'
+    elsif only_a?(s)
         return n
     else
         counter = 0
@@ -11,5 +11,17 @@ def repeatedString(s, n)
         counter += s.count('a') * repeats
     end
 end
+
+def only_a?(s)
+    cnt = 0
+    chars = s.split("")
+    chars.each do |x|
+        cnt += 1 if x == 'a'
+    end
+    return true if cnt == s.length
+    false
+end
+
+puts only_a?("aaaabaaa")
 
 puts repeatedString('aba', 10)
