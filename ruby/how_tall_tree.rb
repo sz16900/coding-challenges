@@ -1,13 +1,16 @@
 def height_of_tree(array)
-    left = 0
-    right = 0
-    i = 0
-    while i < array.length-1
-        left += 1 if array[2*i+1]
-        right += 1 if array[2*i+2]
-        i += 1
+    sum = array[0]
+    indxl = 0
+    indxr = 0
+    left = []
+    right = []
+    while indxl <= array.length-1 || indxr <= array.length-1
+        indxl = (2*indxl)+1
+        indxr = (2*indxr)+2
+        left << indxl
+        right << indxr
     end
-    left >= right ? left : right
+    left.length >= right.length ? left.length : right.length
 end
 
-p height_of_tree([1, 7, 5, 2, 6, 0, 9, 3, 7, 5, 11, 0, 0, 4, 0])
+puts height_of_tree([1, 7, 5, 2, 6, 0, 9, 3, 7, 5, 11, 0, 0, 4, 0])
