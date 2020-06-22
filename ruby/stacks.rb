@@ -72,6 +72,7 @@ def pop
 
     popped = @tail
     # puts "Here #{@tail.value}"
+    # Another one goes here
 
     if @num_of_items == 1
         @head = nil

@@ -13,4 +13,4 @@ def height_of_tree(array)
     left.length >= right.length ? left.length : right.length
 end
 
-puts height_of_tree([1, 7, 5, 2, 6, 0, 9, 3, 7, 5, 11, 0, 0, 4, 0])
+puts height_of_tree([2, 7, 5, 2, 6, 0, 9])
