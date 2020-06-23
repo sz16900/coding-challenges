@@ -5,7 +5,8 @@ def appears_most_times(array)
         times[x] ||= 0
         times[x] += 1
     end
-    times.key(times.values.max)
+    times
+    # times.key(times.values.max)
     
   end
   
