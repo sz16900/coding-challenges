@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require 'set'
 
 def find_duplicates(array)
-    arr = array
-    array.to_set.each do |n|
-        arr.delete_at(arr.index(n) || arr.length)
-    end
-    arr
+  arr = array
+  array.to_set.each do |n|
+    arr.delete_at(arr.index(n) || arr.length)
+  end
+  arr
 end
 
 p find_duplicates([1, 2, 3, 1, 5, 6, 7, 8, 5, 2])
