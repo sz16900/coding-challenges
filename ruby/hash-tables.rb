@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Hard one
+
 def hash_table(arr)
   # write your code here
   times = {}
