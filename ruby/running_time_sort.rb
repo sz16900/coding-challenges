@@ -15,7 +15,9 @@ def running_time(array)
     end
   end
   cnt
+  # p array
+
 end
 
-puts running_time([2, 1, 3, 1, 2])
+puts running_time([10,9,8,7,6,5,4,3,2,1])
 # =>
