@@ -13,6 +13,8 @@ def simple_quicksort(arr)
       right << x
     end
   end
+  p left
+  p right
   sorted = []
   sorted << simple_quicksort(left)
   sorted << middle
